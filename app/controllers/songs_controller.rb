@@ -3,6 +3,13 @@ class SongsController < ApplicationController
   # GET /songs.json
   def index
     @songs = Song.all
+    @all_genres = Song.all_genres
+    @selected_genres = params[:genres]
+    @selected_genres ||= @all_genres
+
+    @random_song = Song.find(Song.get_random_song_id(@selected_genres))
+    startTime = @random_song.startTime
+    @url = @random_song.url + "?autoplay=0&start=" + startTime
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,7 +34,7 @@ class SongsController < ApplicationController
     @song = Song.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html 
       format.json { render json: @song }
     end
   end
@@ -35,12 +42,19 @@ class SongsController < ApplicationController
   # GET /songs/1/edit
   def edit
     @song = Song.find(params[:id])
+    @min = (@song.startTime).to_i / 60
+    @sec = (@song.startTime).to_i % 60
   end
 
   # POST /songs
   # POST /songs.json
   def create
-    @song = Song.new(params[:song])
+    @song = Song.new
+    newSong = params[:song] 
+    @song.title = 
+    @song.url = newSong[:url]
+    @song.startTime = (newSong[:min] * 60) + newSong[:sec]
+    @song.genre = newSong[:genre]
 
     respond_to do |format|
       if @song.save
@@ -74,10 +88,10 @@ class SongsController < ApplicationController
   def destroy
     @song = Song.find(params[:id])
     @song.destroy
-
+    flash[:notice] = "Song #{@song.title} deleted"
     respond_to do |format|
-      format.html { redirect_to songs_url }
-      format.json { head :no_content }
+      format.html { redirect_to songs_path }
+      format.json { redirect_to songs_path }
     end
   end
 end

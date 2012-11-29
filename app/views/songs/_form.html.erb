@@ -12,20 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :url %>
+    <%= f.text_field :url, size: "60" %>
   </div>
   <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
+    <% Song.all_genres.each do |genre| %>
+      <%= radio_button_tag :genre, genre, !@song.genre.nil? && @song.genre.include?(genre) %>
+      <%= genre.humanize %>
+    <% end %>
   </div>
   <div class="field">
-    <%= f.label :genre %><br />
-    <%= f.text_field :genre %>
-  </div>
-  <div class="field">
-    <%= f.label :startTime %><br />
-    <%= f.text_field :startTime %>
+    <% @min ||= "min" %>
+    <% @sec ||= "sec" %>
+    <%= f.text_field :min, size: "2", value: @min %>
+    :
+    <%= f.text_field :sec, size: "2", value: @sec %>
   </div>
   <div class="actions">
     <%= f.submit %>

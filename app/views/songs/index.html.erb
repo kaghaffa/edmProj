@@ -1,29 +1,13 @@
-<h1>Listing songs</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Url</th>
-    <th>Genre</th>
-    <th>Starttime</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @songs.each do |song| %>
-  <tr>
-    <td><%= song.title %></td>
-    <td><%= song.url %></td>
-    <td><%= song.genre %></td>
-    <td><%= song.startTime %></td>
-    <td><%= link_to 'Show', song %></td>
-    <td><%= link_to 'Edit', edit_song_path(song) %></td>
-    <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<%= form_tag songs_path, :method => :get, :id => "genres_form" do %>
+  <% @all_genres.each do |genre| %>
+    <%= label_tag(genre) %>
+    <%= check_box_tag("genres[#{genre}]", 1, @selected_genres.include?(genre)) %>
+  <% end %>
+  <%= submit_tag("Show me the DROP") %>
 <% end %>
-</table>
-
+<h2><%= get_youtube_title(@url) %></h2> 
+<%= youtube_video @url %>
+ 
 <br />
-
-<%= link_to 'New Song', new_song_path %>
+<%= link_to 'New song!', new_song_path %>
+<%= link_to 'Dead link?', @random_song, confirm: 'Are you sure?', method: :delete %>
