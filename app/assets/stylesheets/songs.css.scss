@@ -72,3 +72,11 @@ h2 {
   display: inline;
   font-size: 20px;
 }
+
+#genre-form label :hover {
+  cursor: pointer;
+  color: #ededed;
+  border-radius: 5px;
+  padding: 2px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #29264D), color-stop(100%, #6443C9));
+}

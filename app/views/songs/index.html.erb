@@ -1,8 +1,10 @@
 <%= form_tag songs_path, :method => :get, :id => "genre-form" do %>
   <% @all_genres.each do |genre| %>
-    <%= label_tag(genre.downcase) %>
+  <label>
+    <%= label_tag genre %>
     <%= check_box_tag("genres[#{genre}]", 1, @selected_genres.include?(genre),
       :class => "checkbox") %>
+    </label>
   <% end %><br>
   <%= submit_tag("SHOW ME THE DROP", :class =>"genre-form-submit-button") %>
 <% end %>
