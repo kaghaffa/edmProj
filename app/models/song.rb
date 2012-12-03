@@ -28,4 +28,15 @@ class Song < ActiveRecord::Base
     end
     ids
   end
+
+  def self.get_youtube_title(videoID)
+    newUrl = "http://www.youtube.com/watch?v=" + videoID
+    doc = Nokogiri::HTML(open(newUrl))
+    doc.css('title')[0].text
+  end
+
+  def self.get_youtube_video_id(url)
+    regex = /youtube.com.*(?:\/|v=)([^&$]+)/
+    url.match(regex)[1]
+  end
 end

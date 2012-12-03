@@ -17,16 +17,14 @@
   </div>
   <div class="field">
     <% Song.all_genres.each do |genre| %>
-      <%= radio_button_tag :genre, genre, !@song.genre.nil? && @song.genre.include?(genre) %>
+      <%= f.radio_button :genre, genre, :checked => (!@song.genre.nil? && @song.genre.include?(genre)) %>
       <%= genre.humanize %>
     <% end %>
   </div>
   <div class="field">
-    <% @min ||= "min" %>
-    <% @sec ||= "sec" %>
-    <%= f.text_field :min, size: "2", value: @min %>
+    <%= f.text_field :min, size: "2", placeholder: "min", value: @min %>
     :
-    <%= f.text_field :sec, size: "2", value: @sec %>
+    <%= f.text_field :sec, size: "2", placeholder: "sec", value: @sec %>
   </div>
   <div class="actions">
     <%= f.submit %>

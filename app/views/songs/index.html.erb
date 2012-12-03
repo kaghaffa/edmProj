@@ -1,13 +1,13 @@
-<%= form_tag songs_path, :method => :get, :id => "genres_form" do %>
+<%= form_tag songs_path, :method => :get, :id => "genre-form" do %>
   <% @all_genres.each do |genre| %>
-    <%= label_tag(genre) %>
-    <%= check_box_tag("genres[#{genre}]", 1, @selected_genres.include?(genre)) %>
-  <% end %>
-  <%= submit_tag("Show me the DROP") %>
+    <%= label_tag(genre.downcase) %>
+    <%= check_box_tag("genres[#{genre}]", 1, @selected_genres.include?(genre),
+      :class => "checkbox") %>
+  <% end %><br>
+  <%= submit_tag("SHOW ME THE DROP", :class =>"genre-form-submit-button") %>
 <% end %>
-<h2><%= get_youtube_title(@url) %></h2> 
-<%= youtube_video @url %>
- 
+<!--<div id="video_title"><h2><%= @random_song.title %></h2></div>-->
+<div id="video"><%= youtube_video @url %></div>
 <br />
 <%= link_to 'New song!', new_song_path %>
 <%= link_to 'Dead link?', @random_song, confirm: 'Are you sure?', method: :delete %>

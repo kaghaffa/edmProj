@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<link href='http://fonts.googleapis.com/css?family=Play|Gafata|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <head>
-  <title>EdmProj</title>
+  <title>WHERE'S THE DROP?!</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href="../assets/css/scaffolds.css.scss" rel="stylesheet" media="screen">
 </head>
 <body>
-<h1>EDM PROJ</h1>
-
+<div id="top-header"><h1>WHERE'S THE DROP?!</h1></div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<div class="container">
 <%= yield %>
-
+</div>
 </body>
 </html>

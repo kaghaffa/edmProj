@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+
   # GET /songs
   # GET /songs.json
   def index
@@ -9,7 +10,7 @@ class SongsController < ApplicationController
 
     @random_song = Song.find(Song.get_random_song_id(@selected_genres))
     startTime = @random_song.startTime
-    @url = @random_song.url + "?autoplay=0&start=" + startTime
+    @url = @random_song.url + "?autoplay=1&start=" + startTime
 
     respond_to do |format|
       format.html # index.html.erb
@@ -51,14 +52,15 @@ class SongsController < ApplicationController
   def create
     @song = Song.new
     newSong = params[:song] 
-    @song.title = 
-    @song.url = newSong[:url]
-    @song.startTime = (newSong[:min] * 60) + newSong[:sec]
+    videoID = Song.get_youtube_video_id(newSong[:url])
+    @song.url = "http://www.youtube.com/embed/" + videoID
+    @song.title = Song.get_youtube_title(videoID)
+    @song.startTime = (newSong[:min].to_i * 60) + newSong[:sec].to_i
     @song.genre = newSong[:genre]
 
     respond_to do |format|
       if @song.save
-        format.html { redirect_to @song, notice: 'Song was successfully created.' }
+        format.html { redirect_to songs_path, notice: 'Song was successfully created.' }
         format.json { render json: @song, status: :created, location: @song }
       else
         format.html { render action: "new" }
