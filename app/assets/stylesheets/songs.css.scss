@@ -2,10 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.row {
+  margin-left: 0px;
+}
+
 body {
   background-image: url(image_path('noisy_net.png'));
   color: #8487AF;
-  font-family: CorbelRegular, Helvetica Neue, Helvetica, Arial, Geneva, sans-serif;
+  font-family: Open Sans Condensed, Arial Narrow, serif;
 }
 
 h1 {
@@ -29,28 +33,46 @@ h2 {
 
 .container {
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: center;
-  font-family: helvetica neue, helvetica, arial, geneva, sans-serif;
+}
+
+h3:first-child {
+  margin-top: 0px;
+}
+
+h3 {
+    font-family: Open Sans Condensed, Arial Narrow, serif;
+    color: white;
+    margin-top: 50px;
+}
+
+h3 b {
+  color: #9372F7
+}
+
+h2 {
+    font-family: Open Sans Condensed, Arial Narrow, serif;
+    color: white;
 }
 
 .genre-form-submit-button {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9372F7), color-stop(100%, #6443C9));
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background-color: #7B5AE0;
   color: #100F14;
   border: none;
-  font-weight: 125;
   border: transparent;
-  border-radius: 41px;
+  border-radius: 5px;
   padding: 0.64286em 1.71429em 0.64286em 1.71429em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
   font-weight: bold;
+  -moz-transition: all .2s;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  margin-top: 50px;
 }
 
 .genre-form-submit-button:hover {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #29264D), color-stop(100%, #6443C9));
+  opacity: .80;
+  color: white;
 }
 
 #genre-form {
@@ -58,25 +80,58 @@ h2 {
   text-align: center;
 }
 
-#genre-form .checkbox {
-  margin-left: 7px;
-  margin-right: 20px;
-
+#genre-form ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
-#genre-form .checkbox :last-child { 
-  margin-right:0px;
+#genre-form ul li {
+  font-family: Open Sans Condensed, Arial Narrow, serif;
+  display: inline-block;
+  margin-left: 15px;
 }
 
-#genre-form label {
-  display: inline;
+#genre-form ul li:first-child {
+  margin-left: 0px;
+}
+
+#genre-form ul li label {
   font-size: 20px;
+  -moz-transition: color .5s;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+  }
+
+#genre-form ul label:hover {
+    cursor: pointer;
 }
 
-#genre-form label :hover {
-  cursor: pointer;
-  color: #ededed;
-  border-radius: 5px;
-  padding: 2px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #29264D), color-stop(100%, #6443C9));
+#genre-form ul li:hover {
+  color: #A1E9A1;
 }
+
+input[type=checkbox] {
+}
+
+input[type=checkbox]:checked ~ b {
+  color: #A1E9A1;
+}
+
+#genre-form #step-3 li {
+  display: inline;
+}
+
+#add-song-link {
+  font-family: CorbelRegular, Helvetica Neue, Helvetica, Arial, Geneva, sans-serif;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #A1E9A1), color-stop(100%, #3DAA21));
+  color: #100F14;
+  border: none;
+  font-weight: 125;
+  border: transparent;
+  border-radius: 5px;
+  padding: 0.64286em 1.71429em 0.64286em 1.71429em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+  font-weight: bold;
+}
+

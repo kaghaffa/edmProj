@@ -6,11 +6,13 @@ class SongsController < ApplicationController
     @songs = Song.all
     @all_genres = Song.all_genres
     @selected_genres = params[:genres]
-    @selected_genres ||= @all_genres
+    @selected_genres ||= []
 
-    @random_song = Song.find(Song.get_random_song_id(@selected_genres))
-    startTime = @random_song.startTime
-    @url = @random_song.url + "?autoplay=1&start=" + startTime
+    if !@selected_genres.empty?
+      @random_song = Song.find(Song.get_random_song_id(@selected_genres))
+      startTime = @random_song.startTime
+      @url = @random_song.url + "?autoplay=1&start=" + startTime
+    end
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,15 +1,32 @@
-<%= form_tag songs_path, :method => :get, :id => "genre-form" do %>
-  <% @all_genres.each do |genre| %>
-  <label>
-    <%= label_tag genre %>
-    <%= check_box_tag("genres[#{genre}]", 1, @selected_genres.include?(genre),
-      :class => "checkbox") %>
-    </label>
-  <% end %><br>
-  <%= submit_tag("SHOW ME THE DROP", :class =>"genre-form-submit-button") %>
+<% if @selected_genres.empty? %>
+  <div class="row"><h3 class="span4"><b>1 |</b> Turn up your speakers</h3></div>
+  <div class="row"><h3 class="span4"><b>2 |</b> Pick your sound</h3></div>
+<% else %>
+  <div class="row"><h3 class="span4">Pick your sound</h3></div>
 <% end %>
-<!--<div id="video_title"><h2><%= @random_song.title %></h2></div>-->
-<div id="video"><%= youtube_video @url %></div>
-<br />
-<%= link_to 'New song!', new_song_path %>
-<%= link_to 'Dead link?', @random_song, confirm: 'Are you sure?', method: :delete %>
+<div class="row">
+<div class="span4">
+<%= form_tag songs_path, :method => :get, :id => "genre-form" do %>
+  <ul>
+    <% @all_genres.each do |genre| %>
+    <li>
+      <%= label_tag "genres[#{genre}]", genre.capitalize%>
+      <%= check_box_tag("genres[#{genre}]", 1, @selected_genres.include?(genre),
+        :class => "checkbox") %>
+    </li>
+    <% end %><br>
+  </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+      <%= submit_tag("SHOW ME THE DROP", :class => "genre-form-submit-button") %></br></br>
+    </div>
+</div>
+    <!--  <%= link_to 'ADD A DROP', new_song_path, :id => "add-song-link" %> -->
+<% end %>
+<% if !@selected_genres.empty? %>
+  <h2><%= @random_song.title %></h2>
+  <div id="video"><%= render :partial => '\video', :locals => { :url => @url } %></div>
+  <%= link_to 'Dead link?', @random_song, confirm: 'Are you sure?', method: :delete %>
+<% end %>
