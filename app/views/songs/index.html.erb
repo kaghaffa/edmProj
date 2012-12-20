@@ -1,32 +1,28 @@
-<% if @selected_genres.empty? %>
-  <div class="row"><h3 class="span4"><b>1 |</b> Turn up your speakers</h3></div>
-  <div class="row"><h3 class="span4"><b>2 |</b> Pick your sound</h3></div>
-<% else %>
-  <div class="row"><h3 class="span4">Pick your sound</h3></div>
-<% end %>
-<div class="row">
-<div class="span4">
-<%= form_tag songs_path, :method => :get, :id => "genre-form" do %>
-  <ul>
-    <% @all_genres.each do |genre| %>
-    <li>
-      <%= label_tag "genres[#{genre}]", genre.capitalize%>
-      <%= check_box_tag("genres[#{genre}]", 1, @selected_genres.include?(genre),
-        :class => "checkbox") %>
-    </li>
-    <% end %><br>
-  </ul>
-  </div>
+<div id="left-container">
+  <% if @selected_genres.empty? %>
+    <h3><b>1 |</b> Turn up your speakers</h3>
+    <h3><b>2 |</b> Pick your sound</h3>
+  <% else %>
+    <h3>Pick another sound!</h3>
+  <% end %>
+  <%= form_tag songs_path, :method => :get, :id => "genre-form" do %>
+    <ul>
+      <% @all_genres.each do |genre| %>
+      <li>
+        <%= label_tag "genres[#{genre}]", genre.capitalize%>
+        <%= check_box_tag("genres[#{genre}]", 1, @selected_genres.include?(genre),
+          :class => "checkbox") %>
+      </li>
+      <% end %><br>
+    </ul>
+        <%= submit_tag("SHOW ME THE DROP", :class => "genre-form-submit-button") %>
+      </br></br><%= link_to 'Add your own DROP', new_song_path, :class => "add-song" %>
+  <% end %>
 </div>
-<div class="row">
-  <div class="span4">
-      <%= submit_tag("SHOW ME THE DROP", :class => "genre-form-submit-button") %></br></br>
-    </div>
-</div>
-    <!--  <%= link_to 'ADD A DROP', new_song_path, :id => "add-song-link" %> -->
-<% end %>
+<div id="right-container">
 <% if !@selected_genres.empty? %>
   <h2><%= @random_song.title %></h2>
   <div id="video"><%= render :partial => '\video', :locals => { :url => @url } %></div>
-  <%= link_to 'Dead link?', @random_song, confirm: 'Are you sure?', method: :delete %>
+  <%= link_to 'Dead link?', @random_song, confirm: 'Are you sure?', method: :delete, :id => "dead_link" %>
 <% end %>
+</div>

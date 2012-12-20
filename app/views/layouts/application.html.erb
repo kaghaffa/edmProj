@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href='http://fonts.googleapis.com/css?family=Play|Gafata|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <head>
   <row><title>WHERE'S THE DROP?!</title></row>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -9,10 +9,14 @@
   <link href="../assets/css/scaffolds.css.scss" rel="stylesheet" media="screen">
 </head>
 <body>
-<div id="top-header"><h1>WHERE'S THE DROP?!</h1></div>
+  <div class="row-fluid">
+    <div class="span6 offset3">
+      <div id="top-header"><h1>[title here]</h1></div>
+    </div>
+  </div>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<div class="container">
+<div id="container">
 <%= yield %>
 </div>
 </body>

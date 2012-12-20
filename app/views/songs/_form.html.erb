@@ -10,10 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+<div id="form-container">
   <div class="field">
-    <%= f.label :url %>
-    <%= f.text_field :url, size: "60" %>
+    <%= f.label :url, "Youtube URL" %>
+    <%= f.text_field :url, size: "60", :id => "url-text-field" %>
   </div>
   <div class="field">
     <% Song.all_genres.each do |genre| %>
@@ -22,11 +22,13 @@
     <% end %>
   </div>
   <div class="field">
-    <%= f.text_field :min, size: "2", placeholder: "min", value: @min %>
+    <%= f.label :timelabel, "When's the DROP?" %>
+    <%= f.text_field :min, size: "2", placeholder: "min", value: @min, :class => "time-text-field" %>
     :
-    <%= f.text_field :sec, size: "2", placeholder: "sec", value: @sec %>
+    <%= f.text_field :sec, size: "2", placeholder: "sec", value: @sec, :class => "time-text-field" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'ADD YOUR DROP', :class=>"add-song-button" %>
   </div>
 <% end %>
+</div>
