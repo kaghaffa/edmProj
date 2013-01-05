@@ -12,17 +12,19 @@
   <% end %>
 <div id="form-container">
   <div class="field">
-    <%= f.label :url, "Youtube URL" %>
-    <%= f.text_field :url, size: "60", :id => "url-text-field" %>
+    <%= f.text_field :url, size: "60", placeholder: "Youtube URL", :id => "url-text-field" %>
   </div>
   <div class="field">
-    <% Song.all_genres.each do |genre| %>
-      <%= f.radio_button :genre, genre, :checked => (!@song.genre.nil? && @song.genre.include?(genre)) %>
-      <%= genre.humanize %>
-    <% end %>
+    <ul class="genre-list">
+      <% Song.all_genres.each do |genre| %>
+        <li>
+          <%= f.label "genres[#{genre}]", genre.humanize, :class => "genre-label" %>
+          <%= f.radio_button :genre, genre, :checked => (!@song.genre.nil? && @song.genre.include?(genre)) %>
+        </li>
+      <% end %>
+    </ul>
   </div>
   <div class="field">
-    <%= f.label :timelabel, "When's the DROP?" %>
     <%= f.text_field :min, size: "2", placeholder: "min", value: @min, :class => "time-text-field" %>
     :
     <%= f.text_field :sec, size: "2", placeholder: "sec", value: @sec, :class => "time-text-field" %>

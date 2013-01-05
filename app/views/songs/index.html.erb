@@ -5,18 +5,18 @@
   <% else %>
     <h3>Pick another sound!</h3>
   <% end %>
-  <%= form_tag songs_path, :method => :get, :id => "genre-form" do %>
-    <ul>
+  <%= form_tag songs_path, :method => :get, :class => "genre-form" do %>
+    <ul class="genre-list">
       <% @all_genres.each do |genre| %>
       <li>
-        <%= label_tag "genres[#{genre}]", genre.capitalize%>
+        <%= label_tag "genres[#{genre}]", genre.capitalize, :class => "genre-label"%>
         <%= check_box_tag("genres[#{genre}]", 1, @selected_genres.include?(genre),
           :class => "checkbox") %>
       </li>
       <% end %><br>
     </ul>
         <%= submit_tag("SHOW ME THE DROP", :class => "genre-form-submit-button") %>
-      </br></br><%= link_to 'Add your own DROP', new_song_path, :class => "add-song" %>
+      </br></br><%= link_to 'Add your own DROP', new_song_path, :class => "add-song-button" %>
   <% end %>
 </div>
 <div id="right-container">
