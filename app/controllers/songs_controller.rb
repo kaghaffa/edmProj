@@ -11,7 +11,7 @@ class SongsController < ApplicationController
     if !@selected_genres.empty?
       @random_song = Song.find(Song.get_random_song_id(@selected_genres))
       startTime = @random_song.startTime
-      @url = @random_song.url + "?autoplay=0&start=" + startTime
+      @url = @random_song.url + "?autoplay=1&start=" + startTime
     end
 
     respond_to do |format|

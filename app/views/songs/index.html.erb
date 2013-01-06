@@ -1,4 +1,8 @@
+<% if @selected_genres.empty? %>
+<div id="center-container">
+<% else %>
 <div id="left-container">
+<% end %>
   <% if @selected_genres.empty? %>
     <h3><b>1 |</b> Turn up your speakers</h3>
     <h3><b>2 |</b> Pick your sound</h3>
@@ -23,6 +27,6 @@
 <% if !@selected_genres.empty? %>
   <h2><%= @random_song.title %></h2>
   <div id="video"><%= render :partial => '\video', :locals => { :url => @url } %></div>
-  <%= link_to 'Dead link?', @random_song, confirm: 'Are you sure?', method: :delete, :id => "dead_link" %>
+<!--  <%= link_to 'Dead link?', @random_song, confirm: 'Are you sure?', method: :delete, :id => "dead_link" %> -->
 <% end %>
 </div>
