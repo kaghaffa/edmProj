@@ -1,25 +1,20 @@
 <p id="notice"><%= notice %></p>
+<div class="left-container">
+  <h2>
+    <%= link_to @song.title, @song.url, :id => "song-link" %>
+  </h2>
 
-<p>
-  <b>Title:</b>
-  <%= @song.title %>
-</p>
+  <h3>
+    <b>Genre:</b>
+    <%= @song.genre.capitalize %>
+  </h3>
+  <h3>
+    <b>Drop Time:</b>
+    <%= @song.startTime.to_i / 60 %>:<%= @song.startTime.to_i % 60 %>
+  </h3>
+  <%= link_to 'Back', songs_path, :class => "back-button" %>
+</div>
+<div class="right-container">
+  <div class="video"><%= render :partial => '\video', :locals => { :url => @song.url } %></div>
+</div>
 
-<p>
-  <b>Url:</b>
-  <%= @song.url %>
-</p>
-
-<p>
-  <b>Genre:</b>
-  <%= @song.genre %>
-</p>
-
-<p>
-  <b>Starttime:</b>
-  <%= @song.startTime %>
-</p>
-
-
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>

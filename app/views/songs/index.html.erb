@@ -1,11 +1,11 @@
 <% if @selected_genres.empty? %>
-<div id="center-container">
+<div class="center-container">
 <% else %>
-<div id="left-container">
+<div class="left-container">
 <% end %>
   <% if @selected_genres.empty? %>
     <h3><b>1 |</b> Turn up your speakers</h3>
-    <h3><b>2 |</b> Pick your sound</h3>
+    <h3><b>2 |</b> Pick your sound(s)</h3>
   <% else %>
     <h3>Pick another sound!</h3>
   <% end %>
@@ -23,10 +23,10 @@
       </br></br><%= link_to 'Add your own DROP', new_song_path, :class => "add-song-button" %>
   <% end %>
 </div>
-<div id="right-container">
+<div class="right-container">
 <% if !@selected_genres.empty? %>
   <h2><%= @random_song.title %></h2>
-  <div id="video"><%= render :partial => '\video', :locals => { :url => @url } %></div>
+  <div class="video"><%= render :partial => '\video', :locals => { :url => @url } %></div>
 <!--  <%= link_to 'Dead link?', @random_song, confirm: 'Are you sure?', method: :delete, :id => "dead_link" %> -->
 <% end %>
 </div>

@@ -12,7 +12,7 @@
   <% end %>
 <div id="form-container">
   <div class="field">
-    <%= f.text_field :url, size: "60", placeholder: "Youtube URL", :id => "url-text-field" %>
+    <%= f.text_field :url, size: "60", placeholder: "Paste your YouTube URL here!", :id => "url-text-field" %>
   </div>
   <div class="field">
     <ul class="genre-list">
@@ -34,5 +34,5 @@
   </div>
 <% end %>
 </div>
-<%= link_to 'Back', songs_path, :id => "add-song-back-button" %>
+<%= link_to 'Back', songs_path, :class=>"back-button" %>
 

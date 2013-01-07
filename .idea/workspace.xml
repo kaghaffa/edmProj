@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51f2b1d0-2330-4775-962d-2fd7c22b0e15" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/edmProj.iml" afterPath="$PROJECT_DIR$/.idea/edmProj.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/songs.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/songs.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/songs/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/songs/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/songs/index.html.erb" afterPath="$PROJECT_DIR$/app/views/songs/index.html.erb" />
     </list>
     <ignored path="edmProj.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="songs.css.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="songs.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/songs.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="203" column="18" selection-start="4244" selection-end="4244" vertical-scroll-proportion="0.2747253">
+            <state line="203" column="18" selection-start="4244" selection-end="4244" vertical-scroll-proportion="-24.307692">
               <folding />
             </state>
           </provider>
@@ -49,29 +48,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_form.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/songs/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1257" selection-end="1257" vertical-scroll-proportion="-23.68">
-              <folding>
-                <marker date="1357431052000" expanded="true" signature="90:322" placeholder="..." />
-                <marker date="1357431052000" expanded="true" signature="202:311" placeholder="..." />
-                <marker date="1357431052000" expanded="true" signature="360:1190" placeholder="..." />
-                <marker date="1357431052000" expanded="true" signature="382:485" placeholder="..." />
-                <marker date="1357431052000" expanded="true" signature="507:836" placeholder="..." />
-                <marker date="1357431052000" expanded="true" signature="535:827" placeholder="..." />
-                <marker date="1357431052000" expanded="true" signature="592:801" placeholder="..." />
-                <marker date="1357431052000" expanded="true" signature="858:1077" placeholder="..." />
-                <marker date="1357431052000" expanded="true" signature="1101:1173" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="57" selection-start="556" selection-end="556" vertical-scroll-proportion="-8.32">
+            <state line="3" column="105" selection-start="191" selection-end="191" vertical-scroll-proportion="0.06584362">
               <folding />
             </state>
           </provider>
@@ -80,7 +60,16 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/songs/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="33" selection-end="33" vertical-scroll-proportion="-0.64">
+            <state line="7" column="37" selection-start="226" selection-end="226" vertical-scroll-proportion="-4.48">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="9" selection-start="536" selection-end="536" vertical-scroll-proportion="-8.96">
               <folding />
             </state>
           </provider>
@@ -123,12 +112,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/views/songs/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/songs/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/songs/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/songs_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/songs.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/songs/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/songs/_form.html.erb" />
       </list>
     </option>
   </component>
@@ -253,6 +242,24 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="edmProj">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="edmProj">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -279,6 +286,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FullScreen" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
@@ -653,23 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/songs/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1257" selection-end="1257" vertical-scroll-proportion="-23.68">
-          <folding>
-            <marker date="1357431052000" expanded="true" signature="90:322" placeholder="..." />
-            <marker date="1357431052000" expanded="true" signature="202:311" placeholder="..." />
-            <marker date="1357431052000" expanded="true" signature="360:1190" placeholder="..." />
-            <marker date="1357431052000" expanded="true" signature="382:485" placeholder="..." />
-            <marker date="1357431052000" expanded="true" signature="507:836" placeholder="..." />
-            <marker date="1357431052000" expanded="true" signature="535:827" placeholder="..." />
-            <marker date="1357431052000" expanded="true" signature="592:801" placeholder="..." />
-            <marker date="1357431052000" expanded="true" signature="858:1077" placeholder="..." />
-            <marker date="1357431052000" expanded="true" signature="1101:1173" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/songs/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="0" selection-start="139" selection-end="139" vertical-scroll-proportion="-3.2">
@@ -679,23 +670,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="57" selection-start="556" selection-end="556" vertical-scroll-proportion="-8.32">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/songs/_video.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="38" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/songs/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="33" selection-end="33" vertical-scroll-proportion="-0.64">
           <folding />
         </state>
       </provider>
@@ -716,7 +693,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/songs.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="203" column="18" selection-start="4244" selection-end="4244" vertical-scroll-proportion="0.2747253">
+        <state line="203" column="18" selection-start="4244" selection-end="4244" vertical-scroll-proportion="-24.307692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="9" selection-start="536" selection-end="536" vertical-scroll-proportion="-8.96">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/songs/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="37" selection-start="226" selection-end="226" vertical-scroll-proportion="-4.48">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/songs/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="105" selection-start="191" selection-end="191" vertical-scroll-proportion="0.06584362">
           <folding />
         </state>
       </provider>

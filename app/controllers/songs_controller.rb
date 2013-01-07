@@ -42,13 +42,6 @@ class SongsController < ApplicationController
     end
   end
 
-  # GET /songs/1/edit
-  def edit
-    @song = Song.find(params[:id])
-    @min = (@song.startTime).to_i / 60
-    @sec = (@song.startTime).to_i % 60
-  end
-
   # POST /songs
   # POST /songs.json
   def create

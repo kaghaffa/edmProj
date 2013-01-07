@@ -57,7 +57,7 @@ h3 b {
   color: #8487AF;
 }
 
-#center-container {
+.center-container {
   width: 350px;
   margin-top: 150px;
   margin-left: 423px;
@@ -77,7 +77,7 @@ h3 b {
   padding-top: 10px;
 }
 
-#left-container {
+.left-container {
   float: left;
   width: 270px;
   margin-top: 150px;
@@ -98,7 +98,7 @@ h3 b {
   padding-top: 10px;
 }
 
-#right-container {
+.right-container {
   float: right;
   margin-left: 0px;
   text-align: left;
@@ -182,7 +182,7 @@ input[type=checkbox]:checked ~ #genre-list li {
 }
 
 .add-song-button:hover {
-  opacity: .85;
+  opacity: .75;
 }
 
 #form-container {
@@ -194,6 +194,18 @@ input[type=checkbox]:checked ~ #genre-list li {
   color: white;
   font-size: 16px;
   text-align: left;
+}
+
+// SHOW SONG PAGE
+#song-link {
+  color: white;
+  text-decoration: underline;
+}
+
+#song-link:hover {
+  text-decoration: underline;
+  background: none;
+  opacity: .75;
 }
 
 
@@ -250,8 +262,18 @@ input[type=checkbox]:checked ~ #genre-list li {
   margin-bottom: 20px;
 }
 
-#add-song-back-button {
+.back-button {
   color: white;
   font-size: 16px;
   text-align: left;
+}
+
+.back-button:visited {
+  color: white; 
+}
+
+.back-button:hover {
+  text-decoration: none;
+  background: none;
+  opacity: .85;
 }
