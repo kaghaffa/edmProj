@@ -1,9 +1,9 @@
-<% if @selected_genres.empty? %>
+<% if @selected_genre.empty? %>
 <div class="center-container">
 <% else %>
 <div class="left-container">
 <% end %>
-  <% if @selected_genres.empty? %>
+  <% if @selected_genre.empty? %>
     <h3><b>1 |</b> Turn up your speakers</h3>
     <h3><b>2 |</b> Pick your sound(s)</h3>
   <% else %>
@@ -14,17 +14,22 @@
       <% @all_genres.each do |genre| %>
       <li>
         <%= label_tag "genres[#{genre}]", genre.capitalize, :class => "genre-label"%>
-        <%= check_box_tag("genres[#{genre}]", 1, @selected_genres.include?(genre),
-          :class => "checkbox") %>
+        <%= radio_button_tag :genres, genre, @selected_genre == genre,
+          :class => "radio-button" %>
       </li>
-      <% end %><br>
+      <% end %>
+      <li>
+        <%= label_tag :random, "Random", :class => "genre-label"%>
+        <%= radio_button_tag :genres, @all_genres, @selected_genre.split(" ") == @all_genres,
+          :class => "radio-button" %>
+      </li> 
     </ul>
         <%= submit_tag("SHOW ME THE DROP", :class => "genre-form-submit-button") %>
       </br></br><%= link_to 'Add your own DROP', new_song_path, :class => "add-song-button" %>
   <% end %>
 </div>
 <div class="right-container">
-<% if !@selected_genres.empty? %>
+<% if !@selected_genre.empty? %>
   <h2><%= @random_song.title %></h2>
   <div class="video"><%= render :partial => '\video', :locals => { :url => @url } %></div>
 <!--  <%= link_to 'Dead link?', @random_song, confirm: 'Are you sure?', method: :delete, :id => "dead_link" %> -->

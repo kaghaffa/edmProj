@@ -5,11 +5,12 @@ class SongsController < ApplicationController
   def index
     @songs = Song.all
     @all_genres = Song.all_genres
-    @selected_genres = params[:genres]
-    @selected_genres ||= []
+    @selected_genre = params[:genres]
+    @selected_genre ||= []
 
-    if !@selected_genres.empty?
-      @random_song = Song.find(Song.get_random_song_id(@selected_genres))
+    if !@selected_genre.empty?
+
+      @random_song = Song.find(Song.get_random_song_id(@selected_genre))
       startTime = @random_song.startTime
       @url = @random_song.url + "?autoplay=1&start=" + startTime
     end
