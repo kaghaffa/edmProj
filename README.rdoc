@@ -1,3 +1,8 @@
 == "Where's the DROP" Rails App
 
+My first rails app
+
+Link: http://arcane-refuge-4216.herokuapp.com/
+
 Created by: Kayvon Ghaffari
+
